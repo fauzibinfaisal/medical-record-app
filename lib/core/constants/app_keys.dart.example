@@ -1,0 +1,5 @@
+abstract final class AppKeys {
+  AppKeys._();
+
+  static const String xApiKey = 'YOUR_API_KEY_HERE';
+}

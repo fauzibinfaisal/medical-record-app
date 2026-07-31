@@ -63,12 +63,33 @@ class _LoginPageState extends ConsumerState<LoginPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 40),
-
-              Text(
-                'Hai, Selamat Datang',
-                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
+              const SizedBox(height: 10),
+              Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Hai, ',
+                      style: TextStyle(
+                        fontFamily: 'Gilroy',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 28,
+                        height: 1.05,
+                        letterSpacing: -1.0,
+                        color: AppColors.primaryDark,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Selamat Datang',
+                      style: TextStyle(
+                        fontFamily: 'Gilroy',
+                        fontWeight: FontWeight.w800, // ExtraBold
+                        fontSize: 28,
+                        height: 1.05,
+                        letterSpacing: -1.0,
+                        color: AppColors.primaryDark,
+                      ),
+                    ),
+                  ],
                 ),
               ),
 
@@ -77,47 +98,36 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               Text(
                 'Silahkan login untuk melanjutkan',
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.textSecondary,
+                  color: AppColors.simple,
+                  fontSize: 12,
                 ),
               ),
 
-              const SizedBox(height: 30),
-
-              Center(
-                child: Container(
-                  width: 320,
-                  height: 210,
-                  decoration: BoxDecoration(
-                    color: const Color(0xffF5F7FF),
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 20,
-                        offset: const Offset(0, 8),
-                      ),
-                    ],
-                  ),
-                  child: const Center(
-                    child: Icon(
-                      Icons.medical_information,
-                      size: 90,
-                      color: AppColors.primary,
+              Align(
+                alignment: Alignment.centerRight,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: Transform.translate(
+                    offset: const Offset(23, 10),
+                    child: Image.asset(
+                      'lib/assets/images/img-login.png',
+                      height: 280,
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ),
               ),
 
-              const SizedBox(height: 36),
-
               Text(
                 'Email',
-                style: Theme.of(
-                  context,
-                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.primaryDark,
+                  fontSize: 16,
+                ),
               ),
 
-              const SizedBox(height: 12),
+              const SizedBox(height: 16),
 
               Container(
                 decoration: BoxDecoration(
@@ -146,7 +156,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 ),
               ),
 
-              const SizedBox(height: 30),
+              const SizedBox(height: 20),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -155,15 +165,17 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     'Password',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w700,
+                      color: AppColors.primaryDark,
+                      fontSize: 16,
                     ),
                   ),
                   TextButton(
                     onPressed: () {},
                     child: const Text(
                       'Lupa Password anda ?',
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: AppColors.primaryDark,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -207,7 +219,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 ),
               ),
 
-              const SizedBox(height: 36),
+              const SizedBox(height: 30),
 
               SizedBox(
                 width: double.infinity,
@@ -217,7 +229,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff0B2C6B),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                   ),
                   child: state.isLoading
@@ -229,24 +241,33 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                             strokeWidth: 2,
                           ),
                         )
-                      : Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              'Login',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
+                      : Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            const Center(
+                              child: Text(
+                                'Login',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                            SizedBox(width: 14),
-                            Icon(Icons.arrow_forward),
+                            const Positioned(
+                              right: 0,
+                              child: Icon(
+                                Icons.arrow_forward,
+                                color: Colors.white,
+                                size: 24,
+                              ),
+                            ),
                           ],
                         ),
                 ),
               ),
 
-              const SizedBox(height: 40),
+              const SizedBox(height: 10),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -263,7 +284,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     },
                     child: const Text(
                       'Daftar sekarang',
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: AppColors.primaryDark,
                         fontWeight: FontWeight.bold,
                       ),

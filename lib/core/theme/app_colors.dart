@@ -33,4 +33,6 @@ class AppColors {
   static const Color hint = Color(0xFF9CA3AF);
 
   static const Color disabled = Color(0xFFD1D5DB);
+
+  static const Color simple = Color(0xFF597393);
 }
