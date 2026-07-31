@@ -1,0 +1,46 @@
+name: medical_record_app
+description: Medical Record Application
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State Management
+  flutter_riverpod: ^2.6.1
+
+  # Routing
+  go_router: ^16.0.0
+
+  # Network
+  dio: ^5.9.0
+
+  # Dependency Injection
+  get_it: ^8.2.0
+
+  # Local Storage
+  shared_preferences: ^2.5.3
+
+  # Model
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+  build_runner: ^2.7.0
+  freezed: ^3.2.0
+  json_serializable: ^6.11.1
+
+flutter:
+  uses-material-design: true
