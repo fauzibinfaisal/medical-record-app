@@ -15,7 +15,5 @@ abstract class LoginState with _$LoginState {
 
   const LoginState._();
 
-  bool get isFormValid {
-    return email.trim().isNotEmpty && password.trim().isNotEmpty;
-  }
+  bool get isFormValid => email.trim().isNotEmpty && password.trim().isNotEmpty;
 }

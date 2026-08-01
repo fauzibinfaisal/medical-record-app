@@ -8,35 +8,23 @@ class SharedPreferencesService {
   final SharedPreferences _preferences;
 
   Future<bool> saveAccessToken(String token) {
-    return _preferences.setString(
-      AppConstants.accessTokenKey,
-      token,
-    );
+    return _preferences.setString(AppConstants.accessTokenKey, token);
   }
 
   String? getAccessToken() {
-    return _preferences.getString(
-      AppConstants.accessTokenKey,
-    );
+    return _preferences.getString(AppConstants.accessTokenKey);
   }
 
   Future<bool> removeAccessToken() {
-    return _preferences.remove(
-      AppConstants.accessTokenKey,
-    );
+    return _preferences.remove(AppConstants.accessTokenKey);
   }
 
   Future<bool> saveRefreshToken(String token) {
-    return _preferences.setString(
-      AppConstants.refreshTokenKey,
-      token,
-    );
+    return _preferences.setString(AppConstants.refreshTokenKey, token);
   }
 
   String? getRefreshToken() {
-    return _preferences.getString(
-      AppConstants.refreshTokenKey,
-    );
+    return _preferences.getString(AppConstants.refreshTokenKey);
   }
 
   Future<bool> clear() {
@@ -47,5 +35,9 @@ class SharedPreferencesService {
     final token = getAccessToken();
 
     return token != null && token.isNotEmpty;
+  }
+
+  Future<void> clearToken() async {
+    await _preferences.remove('token');
   }
 }

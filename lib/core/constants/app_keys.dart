@@ -1,5 +1,5 @@
 abstract final class AppKeys {
   AppKeys._();
 
-  static const String xApiKey = '<PUT_YOUR_API_KEY_HERE>';
+  static const String xApiKey = 'free_user_3HHkNCE4d86eBrTr0nUFEyeEmFR';
 }
